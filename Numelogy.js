@@ -1,7 +1,19 @@
+/**
+ * Calculate numelogy
+ *
+ * @param {number} input The value for birthday.
+ * @return The numelogy number.
+ * @customfunction
+ */
 function Numelogy(input) {
   if (input == '') {
     return input
   }
+  // Calls recursively for arrays.
+  if (input.map) {
+    return input.map(Numelogy)
+  }
+
   var arr = input.split('')
   arr = arr.map(Number)
   var sum = arr.reduce(function(prev, current, i, arr) {
